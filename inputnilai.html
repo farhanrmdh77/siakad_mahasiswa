@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nilai - SIAKAD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/nilai.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SIAKAD - Input Nilai</h1>
+        <div class="flex">
+            <div id="user-info"></div>
+            <button id="btn-logout" class="btn secondary">Logout</button>
+        </div>
+    </header>
+    <div id="message-container"></div> 
+
+    <main class="container">
+        
+        <div class="card">
+            <div class="nav">
+                <a href="mahasiswa.html">Mahasiswa</a>
+                <a href="dosen.html">Dosen</a>
+                <a href="matakuliah.html">Mata Kuliah</a>
+                <a href="inputnilai.html" class="active">Input Nilai</a>
+            </div>
+        </div>
+
+        <div class="card admin-only">
+            <h3>Input Nilai Mahasiswa</h3>
+            <form id="form-nilai">
+                <label>Mahasiswa</label>
+                <select name="nim" id="select-nim" required>
+                    <option value="">Loading data...</option>
+                </select>
+                
+                <label>Mata Kuliah</label>
+                <select name="kode_mk" id="select-mk" required>
+                    <option value="">Loading data...</option>
+                </select>
+                
+                <label>Nilai Angka (0-100)</label>
+                <input name="nilai" type="number" min="0" max="100" required />
+                
+                <button class="btn" style="margin-top:10px">Simpan Nilai</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h3>Riwayat Nilai</h3>
+            <div class="list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="no">No</th>
+                            <th>NIM</th>
+                            <th>Nama MK</th>
+                            <th>Nilai</th>
+                            <th class="actions">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nilai-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

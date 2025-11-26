@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dosen - SIAKAD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/dosen.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SIAKAD - Dosen</h1>
+        <div class="flex">
+            <div id="user-info"></div>
+            <button id="btn-logout" class="btn secondary">Logout</button>
+        </div>
+    </header>
+    <div id="message-container"></div> 
+
+    <main class="container">
+        
+        <div class="card">
+            <div class="nav">
+                <a href="mahasiswa.html">Mahasiswa</a>
+                <a href="dosen.html" class="active">Dosen</a>
+                <a href="matakuliah.html">Mata Kuliah</a>
+                <a href="inputnilai.html">Input Nilai</a>
+            </div>
+        </div>
+
+        <div class="card admin-only">
+            <h3>Kelola Dosen</h3>
+            <form id="form-dosen">
+                <label>NIDN</label>
+                <input name="nidn" type="number" required />
+                
+                <label>Nama Dosen</label>
+                <input name="nama" required />
+                
+                <label>Jabatan</label>
+                <input name="jabatan" />
+                
+                <div class="flex" style="margin-top:8px;">
+                    <button type="submit" class="btn submit">Simpan</button>
+                    <button type="button" class="btn danger cancel hidden" id="btn-cancel">Batal</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h3>Daftar Dosen</h3>
+            <div class="list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="no">No</th>
+                            <th>NIDN</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th class="actions">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dosen-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

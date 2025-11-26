@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mata Kuliah - SIAKAD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/mk.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SIAKAD - Mata Kuliah</h1>
+        <div class="flex">
+            <div id="user-info"></div>
+            <button id="btn-logout" class="btn secondary">Logout</button>
+        </div>
+    </header>
+    <div id="message-container"></div> 
+
+    <main class="container">
+        
+        <div class="card">
+            <div class="nav">
+                <a href="mahasiswa.html">Mahasiswa</a>
+                <a href="dosen.html">Dosen</a>
+                <a href="matakuliah.html" class="active">Mata Kuliah</a>
+                <a href="inputnilai.html">Input Nilai</a>
+            </div>
+        </div>
+
+        <div class="card admin-only">
+            <h3>Input Mata Kuliah</h3>
+            <form id="form-mk">
+                <label>Kode MK</label>
+                <input name="kode" required />
+                
+                <label>Nama Mata Kuliah</label>
+                <input name="nama" required />
+                
+                <label>SKS</label>
+                <input name="sks" type="number" min="1" max="6" value="3" required />
+                
+                <div class="flex" style="margin-top:8px;">
+                    <button type="submit" class="btn submit">Simpan</button>
+                    <button type="button" class="btn danger cancel hidden" id="btn-cancel">Batal</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h3>Daftar Mata Kuliah</h3>
+            <div class="list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="no">No</th>
+                            <th>Kode</th>
+                            <th>Nama MK</th>
+                            <th>SKS</th>
+                            <th class="actions">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mk-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

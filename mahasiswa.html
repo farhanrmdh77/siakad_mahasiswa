@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mahasiswa - SIAKAD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script type="module" src="js/mahasiswa.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SIAKAD - Mahasiswa</h1>
+        <div class="flex">
+            <div id="user-info"></div>
+            <button id="btn-logout" class="btn secondary">Logout</button>
+        </div>
+    </header>
+    <div id="message-container"></div> 
+
+    <main class="container">
+        
+        <div class="card">
+            <div class="nav">
+                <a href="mahasiswa.html" class="active">Mahasiswa</a>
+                <a href="dosen.html">Dosen</a>
+                <a href="matakuliah.html">Mata Kuliah</a>
+                <a href="inputnilai.html">Input Nilai</a>
+            </div>
+        </div>
+
+        <div class="card admin-only">
+            <h3>Input Data Mahasiswa</h3>
+            <form id="form-student">
+                <label>NIM</label>
+                <input name="nim" type="number" min="1" required />
+                
+                <label>Nama</label>
+                <input name="nama" required />
+                
+                <label>Prodi</label>
+                <input name="prodi" />
+                
+                <div class="flex" style="margin-top:8px; justify-content: flex-start;">
+                    <button type="submit" class="btn submit">Tambah Mahasiswa</button>
+                    <button type="button" class="btn danger cancel hidden" id="btn-cancel">Batalkan</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card admin-only">
+            <h3>Import Excel</h3>
+            <div class="flex">
+                <input type="file" id="excel-file-input" accept=".xlsx, .xls" style="max-width: 300px;"/>
+                <button class="btn secondary" id="btn-upload">Upload</button>
+            </div>
+            <p class="small">Kolom Excel wajib: **nim**, **nama**, **prodi**.</p>
+        </div>
+
+        <div class="card">
+            <h3>Daftar Mahasiswa</h3>
+            <input id="search-input" type="text" placeholder="Cari NIM atau Nama..." style="margin-bottom: 15px;" />
+            <div class="list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="no">No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Prodi</th>
+                            <th class="actions">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
