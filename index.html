@@ -4,7 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Login - SIAKAD</title>
-    <base href="/siakad_mahasiswa/">
+    
+    <base href="/siakad_mahasiswa/" id="base-tag-for-github">
+    
+    <script>
+        // Jika aplikasi berjalan di localhost atau 127.0.0.1, hapus tag <base>
+        if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+            const baseTag = document.getElementById('base-tag-for-github');
+            if (baseTag) {
+                baseTag.remove();
+                console.log("FIX: Base tag dihapus untuk localhost.");
+            }
+        }
+    </script>
+    
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/auth.js"></script>
 </head>
